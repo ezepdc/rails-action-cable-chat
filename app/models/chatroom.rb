@@ -1,3 +1,3 @@
 class Chatroom < ApplicationRecord
-  has_many :message
+  has_many :messages
 end
