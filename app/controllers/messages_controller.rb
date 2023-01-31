@@ -8,7 +8,7 @@ class MessagesController < ApplicationController
     if @message.save
       redirect_to chatroom_path(@chatroom)
     else
-      render "chatroom/show"
+      render "chatroom/show", status: :unprocessable_entity
     end
   end
 
