@@ -4,15 +4,7 @@
   <h1>#<%= @chatroom.name %></h1>
 
   <div class="messages" data-chatroom-subscription-target="messages">
-    <% @chatroom.messages.each do |message| %>
-      <div id="message-<%= message.id %>">
-        <small>
-          <strong><%= message.user.nickname %></strong>
-          <i><%= message.created_at.strftime("%a %b %e at %l:%M %p") %></i>
-        </small>
-        <p><%= message.content %></p>
-      </div>
-    <% end %>
+      <%= render partial: "messages/message", collection: @chatroom.messages %>
   </div>
 
   <%= simple_form_for [@chatroom, @message],
